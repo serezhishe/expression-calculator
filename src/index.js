@@ -44,15 +44,14 @@ function expressionCalculator(expr) {
         let index = rpn.indexOf(operator);
         a = rpn[index - 2];
         b = rpn[index - 1];
-        if (operator === '/' && b === 0) throw Error('TypeError: Devision by zero.');
+        if (operator === '/' && b === 0) throw Error('TypeError: Division by zero.');
         switch (operator) {
             case '+': result = a + b;  break;
             case '-': result = a - b; break;
             case '*': result = a * b; break;
             case '/': result = a / b; break;
-            case '^': result = Math.pow(a, b); break;
         }
-        rpn.splice(index - 2, 3, +result);
+        rpn.splice(index - 2, 3, result);
     }
     return rpn[0];
 }
