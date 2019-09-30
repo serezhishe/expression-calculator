@@ -40,7 +40,6 @@ function expressionCalculator(expr) {
     let a, b, result;
     if (rpn.indexOf('(') !== -1) throw Error('ExpressionError: Brackets must be paired')
     while (rpn.length > 1) {
-        debugger
         let operator = rpn.find(priority);
         let index = rpn.indexOf(operator);
         a = rpn[index - 2];
